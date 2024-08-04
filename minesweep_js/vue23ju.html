@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>
+            Learning Vue 23 ju
+        </title>
+    </head>
+    <style>
+        .box{
+            margin:10px;
+            padding: 100px;
+            color: aqua;
+            background-color: blue;
+            display: inline-block;
+
+
+        }
+        .book{
+            color:brown
+        }
+        .r1{
+            display:inline-block;
+            margin:0;
+            background-color: black;
+            height: 105px;
+            width: 105px;
+            border: 2px solid;
+            padding: 30px;
+            border-color: rgb(20, 213, 213);
+            position: relative;
+
+        }
+        .r2{
+            display:inline-block;
+            margin:0;
+            background-color: black;
+            height: 105px;
+            width: 105px;
+            border: 2px solid;
+            padding: 30px;
+            border-color: rgb(20, 213, 213);
+            position: relative;
+
+        }
+        .r3{
+            display:inline-block;
+            margin:0;
+            background-color: black;
+            height: 105px;
+            width: 105px;
+            border: 2px solid;
+            padding: 30px;
+            border-color: rgb(20, 213, 213);
+            position: relative;
+
+        }
+        .col{
+            display:inline-block;
+            margin:0;
+            background-color: green;
+            color: green;
+            height: 105px;
+            width: 105px;
+            border: 2px solid;
+            padding: 30px;
+            border-color: rgb(20, 213, 213);
+            position: relative;
+
+        }
+        .mine{
+            display:inline-block;
+            margin:0;
+            height: 105px;
+            width: 105px;
+            border: 2px solid;
+            padding: 30px;
+            position: relative;
+
+        }
+        
+        .sweep{
+            position: absolute;
+            background-color: rgb(203, 19, 19);
+            height: 520px;
+            width: 520px;
+            border: 2px solid;
+            padding: 30px;
+            border-color: rgb(20, 213, 213);
+            left:40%;
+
+        }
+    </style>
+
+    
+        
+    
+
+    <body>
+    
+        <div id="app">
+            <button v-on:click="start"> start </button>
+            <h3 v-if="mines[0].v">{{mines[0].msg}}</h3>
+            <h2 v-else>{{mines[1].msg}}</h3>
+            <h2 v-if="win">You Win!!</h2>
+            <p>total mines: {{n}}</p>
+            <p>free boxes remaining:{{re}}</p>
+            <div class="sweep">
+                  <!--box to contain the boxes for the game-->
+            <div id="r1c1" class="r1" :class="{col:ids[0].active}" v-on:click="minecheck(0)">h</div> <!--r1 means row1--> <!--use computed properties here to toggle-->
+            <div id="r1c2" class="r1" v-bind:class="{col:ids[1].active}" v-on:click="minecheck(1)">bye</div>
+            <div id="r1c3" class="r1" v-on:click="minecheck(2)" :class="{col:ids[2].active}">hii</div> <!--why the places were mismatched when nothing written inside a div ??-->
+            <div id="r2c1" class="r2"  v-on:click="minecheck(3)" :class="{col:ids[3].active}">be</div>
+            <div id="r2c2" class="r2"  v-on:click="minecheck(4)" :class="{col:ids[4].active}">th<img v-if="ids[4].a" width="105px" height="105px" src="C:\Users\pacha\OneDrive\Pictures\mine.png"></div>
+            <div id="r2c3" class="r2"  v-on:click="minecheck(5)" :class="{col:ids[5].active}">the</div>
+            <div id="r3c1" class="r3"  v-on:click="minecheck(6)" :class="{col:ids[6].active}">utm</div>
+            <div id="r3c2" class="r3"  v-on:click="minecheck(7)" :class="{col:ids[7].active}">w</div>
+            <div id="r3c3" class="r3"  v-on:click="minecheck(8)" :class="{col:ids[8].active}">i</div>
+            
+            
+            </div>
+        </div>
+    </body>
+    <script src="vue23jujs.js">
+        
+    </script>
+    
+
+    
+    
+</html>
